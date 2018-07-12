@@ -1,5 +1,7 @@
 package com.jetbrains;
 
+import com.sun.xml.internal.bind.v2.TODO;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,13 +14,17 @@ public class Main {
 //                "D:\\IdeaProjects\\variants\\data\\termexport_2018-07-04_09-07-20.csv",3),
 //                "D:\\IdeaProjects\\variants\\data\\dutch-family-names.txt");
 
-        List<String> equivalents = Arrays.asList("eij", "ei", "ey");
+        List<String> equivalents = Arrays.asList("eij", "ey");
         VariationsFactory variationsFactory = new VariationsFactory(
-                DataManagement.listFromFile("D:\\dev\\variants\\data\\termexport_2018-07-04_09-07-20.csv",3),
+                DataManagement.listFromFile(
+                "D:\\IdeaProjects\\data\\variations\\termexport_2018-07-04_09-07-20.csv",3),
                 equivalents,
                true);
 
 
-        DataManagement.mapToFile(variationsFactory.generate(), "D:\\dev\\variants\\data\\dutch-old-spelling_ei-eij-ey.txt");
+        DataManagement.mapToFile(variationsFactory.generate(),
+                "D:\\IdeaProjects\\data\\variations\\dutch-old-spelling_ei-eij-ey.txt");
+
+//        TODO ADD tests all over
     }
 }

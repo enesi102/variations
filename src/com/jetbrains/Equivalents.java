@@ -13,4 +13,10 @@ public class Equivalents {
         this.main = main;
         this.values = values;
     }
+
+    public Equivalents(List<String> values) {
+        this.main = values.get(0);
+        values.remove(0);
+        this.values = values;
+    }
 }
