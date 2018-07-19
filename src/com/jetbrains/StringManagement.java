@@ -21,7 +21,7 @@ public class StringManagement {
         int substringIndex = -1;
         int lenChars = chars.length();
         //TODO: handle special groups exceptions. e.g. IJ
-        //TODO work on this loop, IT SUCKS!!!
+        //TODO: work on this loop, IT SUCKS!!!
         while ((substringIndex = str.indexOf(chars, substringIndex + 1)) > -1){ //the chars matching should be case insensitive because of "(?i)"
             if (Character.isUpperCase(str.codePointAt(substringIndex))){
                 if (Character.isUpperCase(str.codePointAt(substringIndex+1))){
