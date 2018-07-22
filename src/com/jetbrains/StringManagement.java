@@ -62,7 +62,10 @@ public class StringManagement {
 //        int substringIndex = 0;
 //        int charsLength = chars.length();
         for(String replacement : replacements){
-            list.add(replaceAllByCasePattern( str, chars, replacement));
+            String ttt =replaceAllByCasePattern(str, chars, replacement);
+            if (!ttt.equals(str)) {
+                list.add(ttt);
+            }
         }
 
         return list;
