@@ -1,5 +1,6 @@
 package com.jetbrains;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -70,5 +71,16 @@ public class StringManagement {
 
         return list;
     }
+
+
+//    public static List<String> sortByLength(List<String> list){
+//        List<String> returnList = new ArrayList<String>(list);
+//        returnList.sort();
+//
+//
+//        }
+//
+//        return ;
+//    }
 
 }

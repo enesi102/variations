@@ -2,17 +2,17 @@ package com.jetbrains;
 
 import java.util.*;
 
-import static com.sun.xml.internal.ws.util.StringUtils.capitalize;
-
 public class VariationsFactory {
 
     List<String> list;
-    Equivalents equivalents;
-    boolean firstIsMain;
+    StringEquivalents equivalents;
+    boolean firstIsMain;//atm not used
+
+
 
     public VariationsFactory(List<String> list, List<String> equis, boolean firstIsMain) {
         this.list = list;
-        this.equivalents = new Equivalents("ei", equis);
+        this.equivalents = new StringEquivalents(equis);
         this.firstIsMain = firstIsMain;//
 
     }

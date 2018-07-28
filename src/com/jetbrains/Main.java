@@ -14,7 +14,7 @@ public class Main {
 //                "D:\\IdeaProjects\\variants\\data\\termexport_2018-07-04_09-07-20.csv",3),
 //                "D:\\IdeaProjects\\variants\\data\\dutch-family-names.txt");
 
-        List<String> equivalents = Arrays.asList("eij", "ei", "ey");
+        List<String> equivalents = Arrays.asList( "ei", "eij", "ey");
         VariationsFactory variationsFactory = new VariationsFactory(
                 DataManagement.listFromFile(
                 "D:\\IdeaProjects\\data\\variations\\termexport_2018-07-04_09-07-20.csv",3),
