@@ -14,6 +14,17 @@ public class StringManagement {
     enum Case {
         UPPER, LOWER, CAPITALIZED//,notAlpha TODO: manage case
     }
+//https://docs.oracle.com/javase/tutorial/essential/regex/test_harness.html
+
+    /**
+     * https://docs.oracle.com/javase/tutorial/essential/regex/test_harness.html
+     * matcher.start();
+     * matcher.end();
+     *
+     * @param str
+     * @param chars
+     * @return
+     */
 
     //searches chars caseInsensitive/(?i) https://regex101.com/r/eS7fC2/3
     //maps the caseStatus of each encounter(ALLUPPER, alllower, Capitalized [for now]
@@ -23,7 +34,7 @@ public class StringManagement {
         int lenChars = chars.length();
         //TODO: handle special groups exceptions. e.g. IJ
         //TODO work on this loop, IT SUCKS!!!
-        while ((substringIndex = str.indexOf(chars, substringIndex + 1)) > -1){ //the chars matching should be case insensitive because of "(?i)"
+        while ((substringIndex = str.indexOf("(?i)" + chars, substringIndex + 1)) > -1){ //the chars matching should be case insensitive because of "(?i)"
             if (Character.isUpperCase(str.codePointAt(substringIndex))){
                 if (Character.isUpperCase(str.codePointAt(substringIndex+1))){
                     casePattern.add(Case.UPPER);
@@ -42,8 +53,6 @@ public class StringManagement {
     //TODO: handle exceptions
     public static String replaceAllByCasePattern(String str, String chars, String replacement){
         List<Case> casePattern = mapCharsCase(str, chars);
-//        int substringIndex = 0;
-//        int charsLength = chars.length();
         for (Case thisCase : casePattern){
             switch (thisCase){
                 case LOWER: str = str.replaceFirst(chars, replacement.toLowerCase()); break;
@@ -58,10 +67,7 @@ public class StringManagement {
 
 
     public static List<String> replaceAllByCasePattern(String str, String chars, List<String> replacements){
-        List<Case> casePattern = mapCharsCase(str, chars);
         List<String> list =  new LinkedList<>();
-//        int substringIndex = 0;
-//        int charsLength = chars.length();
         for(String replacement : replacements){
             String ttt =replaceAllByCasePattern(str, chars, replacement);
             if (!ttt.equals(str)) {
@@ -71,16 +77,5 @@ public class StringManagement {
 
         return list;
     }
-
-
-//    public static List<String> sortByLength(List<String> list){
-//        List<String> returnList = new ArrayList<String>(list);
-//        returnList.sort();
-//
-//
-//        }
-//
-//        return ;
-//    }
 
 }

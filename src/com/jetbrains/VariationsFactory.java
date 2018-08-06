@@ -1,6 +1,7 @@
 package com.jetbrains;
 
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class VariationsFactory {
 
@@ -24,7 +25,9 @@ public class VariationsFactory {
             List<String> variations = new LinkedList<>();
             List<String> foundChars = new LinkedList<>();
             for (String chars : equivalents.values) {
-                if (term.contains(chars) && !isContained(foundChars, chars)) {//https://regex101.com/r/eS7fC2/3
+
+                if ( Pattern.compile(Pattern.quote(chars),Pattern.CASE_INSENSITIVE).matcher(term).find() &&
+                        !isContained(foundChars, chars)) {//https://regex101.com/r/eS7fC2/3
                     String mainTerm = StringManagement.replaceAllByCasePattern(term, chars, equivalents.main);
                     variations.addAll(StringManagement.replaceAllByCasePattern(mainTerm, equivalents.main, equivalents.values));
                     foundChars.add(chars);
