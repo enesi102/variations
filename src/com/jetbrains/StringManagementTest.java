@@ -1,27 +1,19 @@
 package com.jetbrains;
 
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.testng.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class StringManagementTest {
-
-    @DataProvider
-    public Object[][] data(){
-        return  new String[][]{
-                new String[]{""},
-                new String[]{""},
-                new String[]{""},
-                new String[]{""},
-        };
-    }
+class StringManagementTest {
 
     @Test
-    public void testReplaceAllByCasePattern() {
-    }
+    void replaceAllByCasePatternTest() {
+//        assertAll("Cabin",
+//                () -> StringManagement.replaceAllByCasePattern("Arin","Ar", "Cab"),
+//                () -> StringManagement.replaceAllByCasePattern("Arin","Ar", "cab"),
+//                () -> StringManagement.replaceAllByCasePattern("Arin","ar", "cab")
+//        );
 
-    @Test
-    public void testReplaceAllByCasePattern1() {
+        String a = StringManagement.replaceAllByCasePattern("Arin","ar", "cab");
     }
 }

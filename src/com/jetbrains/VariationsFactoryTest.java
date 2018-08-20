@@ -8,5 +8,8 @@ public class VariationsFactoryTest {
 
     @Test
     public void testGenerate() {
+
+
+
     }
 }
