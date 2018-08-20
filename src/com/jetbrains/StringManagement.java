@@ -1,6 +1,5 @@
 package com.jetbrains;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -33,8 +32,9 @@ public class StringManagement {
         int substringIndex = -1;
         int lenChars = chars.length();
         //TODO: handle special groups exceptions. e.g. IJ
-        //TODO work on this loop, IT SUCKS!!!
-        while ((substringIndex = str.indexOf("(?i)" + chars, substringIndex + 1)) > -1){ //the chars matching should be case insensitive because of "(?i)"
+        //TODO: work on this loop, IT SUCKS!!!
+        //TODO: USE PATTERN
+        while ((substringIndex = str.indexOf(chars, substringIndex + 1)) > -1){ //(the chars matching should be case insensitive because of "(?i)")
             if (Character.isUpperCase(str.codePointAt(substringIndex))){
                 if (Character.isUpperCase(str.codePointAt(substringIndex+1))){
                     casePattern.add(Case.UPPER);
@@ -53,7 +53,7 @@ public class StringManagement {
     //TODO: handle exceptions
     public static String replaceAllByCasePattern(String str, String chars, String replacement){
         List<Case> casePattern = mapCharsCase(str, chars);
-        for (Case thisCase : casePattern){
+        for (Case thisCase : casePattern){// toDO: US PATTERN
             switch (thisCase){
                 case LOWER: str = str.replaceFirst(chars, replacement.toLowerCase()); break;
                 case UPPER: str = str.replaceFirst(chars, replacement.toUpperCase()); break;
