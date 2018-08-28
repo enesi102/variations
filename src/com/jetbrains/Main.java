@@ -7,14 +7,17 @@ import java.util.List;
 
 public class Main {
 
+    //UTF-8 upper to lower matching needed
+
+
     public static void main(String[] args) {
-	//TODO generalize code, input equivalents, !capital letter  sentence case!
+	//TODO generalize code, input equivalents
 //THIS commented section WORKS:
 //        DataManagement.listToFile(DataManagement.listFromFile(
 //                "D:\\IdeaProjects\\variants\\data\\termexport_2018-07-04_09-07-20.csv",3),
 //                "D:\\IdeaProjects\\variants\\data\\dutch-family-names.txt");
 
-        List<String> equivalents = Arrays.asList("eij", "ei", "ey");
+        List<String> equivalents = Arrays.asList( "ei", "eij", "ey");
         VariationsFactory variationsFactory = new VariationsFactory(
                 DataManagement.listFromFile(
                 "D:\\IdeaProjects\\data\\variations\\termexport_2018-07-04_09-07-20.csv",3),
@@ -23,7 +26,7 @@ public class Main {
 
 
         DataManagement.mapToFile(variationsFactory.generate(),
-                "D:\\IdeaProjects\\data\\variations\\dutch-old-spelling_ei-eij-ey.txt");
+                "D:\\IdeaProjects\\data\\variations\\dutch-old-spelling_eij.txt");
 
 //        TODO ADD tests all over
     }
