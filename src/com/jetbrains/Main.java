@@ -17,7 +17,7 @@ public class Main {
 //                "D:\\IdeaProjects\\variants\\data\\termexport_2018-07-04_09-07-20.csv",3),
 //                "D:\\IdeaProjects\\variants\\data\\dutch-family-names.txt");
 
-        List<String> equivalents = Arrays.asList( "ui", "uij", "uy");
+        List<String> equivalents = Arrays.asList( "ei", "eij", "ey");
         VariationsFactory variationsFactory = new VariationsFactory(
                 DataManagement.listFromFile(
                 "D:\\IdeaProjects\\data\\variations\\termexport_2018-07-04_09-07-20.csv",3),
@@ -26,7 +26,7 @@ public class Main {
 
 
         DataManagement.mapToFile(variationsFactory.generate(),
-                "D:\\IdeaProjects\\data\\variations\\dutch-old-spelling_uij.txt");
+                "D:\\IdeaProjects\\data\\variations\\dutch-old-spelling_eij.txt");
 
 //        TODO ADD tests all over
     }
